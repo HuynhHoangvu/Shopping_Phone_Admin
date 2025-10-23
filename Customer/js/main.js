@@ -70,11 +70,6 @@ document.getElementById("filterType").addEventListener("change", function () {
   renderProductList(filtered);
 });
 
-
-/* =======================
-   Cart Logic
-   ======================= */
-
 // Thêm sản phẩm vào giỏ
 function addToCart(product) {
   let existing = cart.find(item => item.name === product.name);
@@ -97,7 +92,7 @@ function calculateCart() {
 }
 // Nút thanh toán
 document.getElementById("thanhToan").addEventListener("click", () => {
-  if (confirm("Bạn có chắc chắn muốn thanh toán và xóa giỏ hàng không?")) {
+  if (confirm("Bạn có chắc chắn muốn thanh toán không?")) {
     cart = [];
     saveCart();
     renderCart();
