@@ -1,0 +1,109 @@
+/* TẠO GIAO DIỆN CHUYÊN NGHIỆP GIỐNG HÌNH MẪU */
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 1. BACKGROUND TỐI MỜ */
+    background: url('path/to/your/dark_background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    background-color: #333; 
+    color: #fff; /* Chữ trắng */
+}
+
+/* Lớp phủ tối mờ */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Tăng độ tối lên 70% */
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px; /* Giảm nhẹ để phù hợp với 2 icon lớn */
+}
+
+.pic {
+    padding: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff; /* Đảm bảo chữ màu trắng */
+    
+    /* STYLE CARD CHÍNH */
+    background-color: rgba(255, 255, 255, 0.05); /* Nền mờ nhẹ */
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.pic:hover {
+    transform: translateY(-8px); /* Hiệu ứng nâng mạnh hơn */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Shadow nổi bật */
+}
+
+/* 2. KHUNG CHỨA HÌNH ẢNH TRÒN */
+.homeEffect {
+    width: 180px; 
+    height: 180px;
+    border-radius: 50%; /* TẠO HÌNH TRÒN */
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+    background-color: white; /* Nền trắng */
+    margin: 0 auto; /* Căn giữa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+}
+
+.pic:hover .homeEffect {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.homeEffect img {
+    /* Đảm bảo ảnh hiển thị đẹp trong khung tròn */
+    width: 90%; 
+    height: 90%;
+    object-fit: contain; 
+    border-radius: 50%; 
+}
+
+h1 {
+    font-size: 1.8rem; /* Tăng kích thước chữ */
+    margin-top: 25px; /* Tăng khoảng cách */
+    font-weight: 500;
+}
+
+/* 3. HIỆU ỨNG GẠCH CHÂN */
+.underline-hover-effect {
+    display: inline-block;
+    position: relative;
+    color: #fff; /* Màu chữ tiêu đề */
+}
+
+.underline-hover-effect::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px; /* Dày hơn */
+    bottom: 0;
+    /* Căn gạch chân vào giữa */
+    left: 50%; 
+    transform: translateX(-50%);
+    background: #007bff; 
+    transition: width 0.3s ease;
+}
+
+.pic:hover .underline-hover-effect::after {
+    width: 80%; /* Chiều rộng gạch chân (không full 100%) */
+}
+
+a {
+    text-decoration: none;
+}
+/* CSS cho số lượng giỏ hàng nhỏ gọn ở góc trên bên phải */

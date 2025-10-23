@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPhone</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- BS4 CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        
+        <a class="navbar-brand d-flex align-items-center" href="../main.html">
+            <i class="fas fa-mobile-alt fa-lg mr-2"></i> 
+            <span style="font-weight: 600;">Cyber Phone</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active mx-3">
+                    <a class="nav-link text-white text-center" href="../main.html">
+                        <i class="fas fa-home fa-lg d-block mb-1"></i>
+                        Home <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+               
+            </ul>
+        </div>
+        
+    <a class="nav-link text-white cart-button position-relative d-flex align-items-center" 
+   href="javascript:void(0)" id="main-nav-cart-btn">
+    
+    
+    <span class="position-relative ml-2"> 
+        <i class="fa fa-shopping-cart fa-lg"></i>
+        
+        <span class="bag-count badge badge-pill badge-danger cart-badge-number">0</span>
+    </span>
+</a>
+
+    </div>
+</nav>
+    <!-- SIDEBAR MINI -->
+
+<div class="container">
+<nav id="main-nav">
+  <a class="cart-button" href="javascript:void(0)">
+    <span class="bag-count">0</span>
+    <span class="bag-icon"><i class="fa fa-shopping-cart"></i></span>
+    <span class="bag-label">View Bag</span>
+  </a>
+</nav>
+</div>
+<aside id="sidebar-cart">
+  <main>
+    <a href="javascript:void(0)" class="close-button"><span class="close-icon">X</span></a>
+    <h2>Shopping Bag <span class="count">0</span></h2>
+    <ul class="products" id="cartItems"></ul>
+    <div class="totals">
+      <div class="subtotal">
+        <span class="label">Subtotal:</span> <span class="amount" id="cartTotal">$0.00</span>
+      </div>
+    </div>
+    <div class="action-buttons">
+ 
+      <a class="checkout-button" id="thanhToan" href="#">Thanh Toán</a>
+    </div>
+  </main>
+</aside>
+<div id="sidebar-cart-curtain"></div>
+
+
+<div id="sidebar-cart-curtain"></div>   
+
+
+
+    <div class="sidebarMini">
+        <button class="sidebarMini__button">
+            <i class="fa fa-cog"></i>
+        </button>
+        <div class="sidebarMini__content">
+            <h2>Choose Mode</h2>
+            <div class="d-flex">
+                <span>Light</span>
+                <label class="switch" for="checkbox">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="slider"></div>
+                </label>
+                <span>Dark</span>
+            </div>
+        </div>
+    </div>
+    <section class="products container section">
+        <h2 class="section-title">-Featured Products-</h2>
+        <a href="../main.html"><h1>Back Home</h1></a>
+         <div class="form-group mb-3">
+        <label for="filterType">Lọc theo loại:</label>
+        <select id="filterType" class="form-control w-25">
+            <option value="all">Tất cả</option>
+            <option value="samsung">Samsung</option>
+            <option value="iphone">iPhone</option>
+        </select>
+    </div>
+        <div class="products__content">
+            <div class="row" id="productList">
+               
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Thư viện hỗ trợ jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <!-- BS4 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
